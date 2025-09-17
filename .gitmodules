@@ -1,0 +1,3 @@
+[submodule "Nexa-api"]
+	path = Nexa-api
+	url = https://github.com/Titus-System/Nexa-api.git
