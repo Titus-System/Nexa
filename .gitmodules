@@ -4,3 +4,6 @@
 [submodule "Nexa-AI-Agents"]
 	path = Nexa-AI-Agents
 	url = https://github.com/Titus-System/Nexa-AI-Agents.git
+[submodule "Nexa-frontend"]
+	path = Nexa-frontend
+	url = https://github.com/Titus-System/Nexa-frontend.git
