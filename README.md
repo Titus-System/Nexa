@@ -7,8 +7,6 @@
 > Status do Projeto: Em andamento ... 
 <!-- >
 > Relatório de Testes: [PDF](docs/cliente/relatorio_avaliacoes.pdf) 📊
->
-> Pasta de Documentação: [Link](docs/) 📄
 > 
 > Video do Projeto:  [Youtube](https://youtu.be/) 📽️ -->
 
@@ -18,7 +16,8 @@ Desenvolvimento de um agente de Inteligência Artificial capaz de elaborar a ins
 
 
 ## Arquitetura
-Arquitetura orientada a eventos e altamente desacoplada, mantendo foco em experiência do usuário, confiabilidade e integração transparente com IA.
+Arquitetura orientada a eventos e altamente desacoplada, mantendo foco em experiência do usuário, confiabilidade e integração transparente com IA.  
+
 ![arquitetura](docs/arquitetura.svg)
 Para detalhes da implementação: [Documento da Arquitetura](architecture.md)
 
@@ -65,16 +64,90 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 
 
 ### 📅 Cronograma
-| Sprint            | Prazo      | Status       | Documentação | Entrega |
-| ----------------- | ---------- | ------------ | ------------ | ------- |
-| Kick Off          | 25/08/2025 | Concluído    | -            | -       |
-| Sprint 1          | 28/09/2025 | Concluído    |
-| Sprint 2          | 26/10/2025 | Em andamento |
-| Sprint 3          | 23/11/2025 | Pendente     |
-| Feira de Soluções | 04/12/2025 | Pendente     |
+| Sprint            | Prazo      | Status       | Documentação           | Entrega |
+| ----------------- | ---------- | ------------ | ---------------------- | ------- |
+| Kick Off          | 25/08/2025 | Concluído    | -                      | -       |
+| Sprint 1          | 28/09/2025 | Concluído    | [sprint1](sprint_1.md) | -       |
+| Sprint 2          | 26/10/2025 | Em andamento | [sprint2](sprint_2.md) | -       |
+| Sprint 3          | 23/11/2025 | Pendente     | [sprint3](sprint_3.md) | -       |
+| Feira de Soluções | 04/12/2025 | Pendente     | [feira](feira_sol.md)  | -       |
 
 
 ## Manual de Instalação e Execução
+
+### 1. Pré-requisitos
+
+- Python 3.11+ (para backend e IA)
+- Node.js 18+ e npm (para frontend)
+- Redis (pode ser local ou via Docker)
+- Docker e Docker Compose (opcional, para facilitar a execução)
+
+---
+
+### 2. Clonando o Repositório
+
+```bash
+git clone https://github.com/Titus-System/Nexa.git
+cd Nexa
+```
+
+---
+
+### 3. Backend (Nexa-api)
+
+```bash
+cd Nexa-api
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+cp .env.example .env
+# Edite o .env conforme necessário
+python run.py
+```
+**Ou Usando Docker Compose (opcional)**
+
+```bash
+cd Nexa-api
+docker compose up -d --build
+```
+
+
+O backend estará disponível em [http://localhost:5000](http://localhost:5000).
+
+---
+
+### 4. IA/Agentes (Nexa-AI-Agents)
+
+```bash
+cd ../Nexa-AI-Agents
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edite o .env conforme necessário
+python run.py
+```
+O agente estará disponível em [http://localhost:5001](http://localhost:5000).
+
+---
+
+### 5. Frontend (Nexa-frontend)
+
+```bash
+cd ../Nexa-frontend
+npm install
+npm run dev
+```
+O frontend estará disponível em [http://localhost:5173](http://localhost:5173).
+
+---
+
+### 7. Observações
+
+- Certifique-se de que o Redis está rodando (`localhost:6379` por padrão).
+- Ajuste as variáveis de ambiente nos arquivos `.env` de cada módulo conforme necessário.
+- Para produção, utilize Gunicorn no backend e configure variáveis de ambiente seguras.
 
 
 
