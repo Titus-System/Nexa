@@ -78,6 +78,7 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 ### 1. Pré-requisitos
 
 - Python 3.11+ (para backend e IA)
+- Servidor Ollama rodando o modelo `qwen2.5:14b`
 - Node.js 18+ e npm (para frontend)
 - Redis (pode ser local ou via Docker)
 - Docker e Docker Compose (opcional, para facilitar a execução)
