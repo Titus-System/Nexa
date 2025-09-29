@@ -67,7 +67,7 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 | Sprint            | Prazo      | Status       | Documentação           | Entrega |
 | ----------------- | ---------- | ------------ | ---------------------- | ------- |
 | Kick Off          | 25/08/2025 | Concluído    | -                      | -       |
-| Sprint 1          | 28/09/2025 | Concluído    | [sprint1](sprint_1.md) | -       |
+| Sprint 1          | 28/09/2025 | Concluído    | [sprint1](sprint_1.md) | [video](https://youtu.be/jFSbepQdjow)       |
 | Sprint 2          | 26/10/2025 | Em andamento | [sprint2](sprint_2.md) | -       |
 | Sprint 3          | 23/11/2025 | Pendente     | [sprint3](sprint_3.md) | -       |
 | Feira de Soluções | 04/12/2025 | Pendente     | [feira](feira_sol.md)  | -       |
@@ -163,15 +163,15 @@ O frontend estará disponível em [http://localhost:5173](http://localhost:5173)
       <th>Linkedin</th>
     </tr>
     <tr>
-      <td>Agatha Wei</td>
+      <td>Pedro Garcia</td>
       <td>Product Owner</td>
       <td>
-        <a href="https://github.com/Agathawei070">
-            <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+        <a href="https://github.com/pedro-fs-garcia">
+          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
         </a>
       </td>
       <td>
-        <a href="https://www.linkedin.com/in/">
+        <a href="https://www.linkedin.com/in/pedro-fs-garcia">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
         </a>
       </td>
@@ -200,20 +200,6 @@ O frontend estará disponível em [http://localhost:5173](http://localhost:5173)
       </td>
       <td>
         <a href="https://www.linkedin.com/in/eduardo-ribeiro-4b78002b2">
-            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Pedro Garcia</td>
-      <td>Dev Team</td>
-      <td>
-        <a href="https://github.com/pedro-fs-garcia">
-          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.linkedin.com/in/pedro-fs-garcia">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
         </a>
       </td>
