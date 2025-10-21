@@ -1,10 +1,10 @@
 # Sprint 1
 
 ## Duração
+
 >**Início**: 08/09/2025  
 >**Fim**: 28/09/20245  
 > **Sprint Review**: 29/09/2025
-
 
 ## Foco
 
@@ -34,12 +34,14 @@ A primeira sprint teve como objetivo estabelecer as fundações técnicas da apl
   * Exibição de resultados retornados pela classificação.
 
 ## Demonstração
+
 ### Figma
+
 [Protótipo Visual no Figma](https://www.figma.com/design/vgEGyLsrUEILCN7W8UYE6t/Nexa-by-Titus-Systems?node-id=0-1&p=f&t=LcNUCiWVZ2RGiUmG-0)
 
 ### YouTube
-[Link de demonstração da entrega da primeira Sprint]()
 
+[Link de demonstração da entrega da primeira Sprint](https://youtu.be/jFSbepQdjow)
 
 ## Backlog
 
