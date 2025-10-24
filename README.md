@@ -46,12 +46,62 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 | ---------------- | ---------------------------------------------- | ----------------- | ---------------- | ---------------------------------- |
 | Creonice Honório - Empresa TecSys | 4º Análise e Desenvolvimento de Sistemas | Giuliano Bertoti  | Juliana Pasquini | <creonice@tecsysbrasil.com.br> |
 
-## Arquitetura
+## Documentação Técnica
 
-Arquitetura orientada a eventos e altamente desacoplada, mantendo foco em experiência do usuário, confiabilidade e integração transparente com IA.  
+Arquitetura orientada a eventos e altamente desacoplada, mantendo foco em experiência do usuário, confiabilidade e integração transparente com IA. . Cada componente possui responsabilidades bem definidas e se comunica através de APIs REST, WebSockets e um broker de mensagens via Redis, conforme detalhado nos documentos de arquitetura.
+
+## Arquitetura
 
 ![arquitetura](docs/arquitetura_sprint_2.svg)
 Para detalhes da implementação: [Documento da Arquitetura](architecture.md)
+
+Abaixo você encontra os links para a documentação específica de cada serviço.
+
+-----
+
+### 🔹 [Nexa API](https://github.com/Titus-System/Nexa-api)
+
+O `Nexa-api` é o **orquestrador central** da aplicação. Construído em Python com Flask, ele atua como o API Gateway, gerenciando todas as requisições do cliente, a lógica de negócio principal e a comunicação assíncrona com os outros serviços.
+
+**Principais Responsabilidades:**
+
+- **Endpoints REST:** Expõe os endpoints para o frontend, incluindo `/upload-pdf` para o envio de documentos e `/classify-partnumber` para classificações individuais.
+- **Orquestração Assíncrona:** Utiliza **Celery** e **Redis** para enfileirar tarefas pesadas (como o parsing de PDFs e as chamadas para a IA), mantendo a API sempre responsiva.
+- **Comunicação em Tempo Real:** Gerencia a comunicação via **WebSocket (Socket.IO)** com o frontend para enviar atualizações de progresso em tempo real.
+- **Persistência de Dados:** É o único serviço com responsabilidade de escrita no **banco de dados relacional (PostgreSQL)**, onde armazena os resultados finais das classificações.
+- **Validação e Segurança:** Valida os dados de entrada (usando Pydantic) e lida com a lógica de autenticação e autorização de usuários.
+
+**Tecnologias-chave:** `Python`, `Flask`, `Celery`, `Redis`, `Socket.IO`, `SQLAlchemy`, `Docker`.
+
+-----
+
+### 🧠 [Nexa AI Agents](https://github.com/Titus-System/Nexa-AI-Agents/)
+
+O `Nexa-AI-Agents` é o **cérebro de IA** do sistema. Este serviço especializado, também em Python, é totalmente focado em executar as tarefas de inteligência artificial. Ele opera de forma independente, recebendo solicitações do `Nexa-api` e retornando resultados sem conhecer a lógica de negócio principal.
+
+**Principais Responsabilidades:**
+
+- **Processamento de IA:** Executa os modelos de linguagem para gerar descrições técnicas e classificar NCMs.
+- **Retrieval-Augmented Generation (RAG):** Utiliza um **banco de dados vetorial (ChromaDB)** para buscar informações contextuais e semanticamente similares, aumentando a precisão e a qualidade das respostas geradas pela IA.
+- **Publicação de Progresso:** Comunica-se de forma assíncrona com o `Nexa-api`, publicando atualizações de progresso em um canal **Redis (Pub/Sub)**.
+- **Serviço Agnóstico:** Não possui estado e não se conecta diretamente a outros componentes, exceto o Redis e o ChromaDB, garantindo seu total desacoplamento.
+
+**Tecnologias-chave:** `Python`, `Flask`, `Ollama`, `ChromaDB`, `Redis`, `smol-agents`, `Docker`.
+
+-----
+
+### 🖥️ [Nexa Frontend](https://github.com/Titus-System/Nexa-Frontend)
+
+O `Nexa-frontend` é a **interface do cliente** da aplicação. Desenvolvida com React e TypeScript, esta Single-Page Application (SPA) foi projetada para oferecer uma experiência de usuário moderna, reativa e em tempo real.
+
+**Principais Responsabilidades:**
+
+- **Interação com o Usuário:** Fornece as telas para upload de documentos, entrada manual de Part Numbers e visualização de resultados.
+- **Comunicação com a API:** Realiza chamadas para a `Nexa-api` via HTTP REST para iniciar os processos de classificação.
+- **Atualizações em Tempo Real:** Estabelece uma conexão **WebSocket** com a API para receber e exibir o progresso das tarefas sem a necessidade de recarregar a página.
+- **Gerenciamento de Estado:** Controla o estado da interface, garantindo que os dados exibidos sejam consistentes e atualizados.
+
+**Tecnologias-chave:** `React`, `TypeScript`, `Vite`, `Socket.IO-client`, `CSS/Sass`.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -59,12 +109,12 @@ Para detalhes da implementação: [Documento da Arquitetura](architecture.md)
   <img alt="Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
   <img alt="Flask" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg">
   <img alt="Pytest" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original.svg" />
+  <img alt="PostgreSQL" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg">
+  <img alt="SQLAlchemy" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg" />
   <img alt="redis" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" />
   <img alt="Smolagents" height="30" width="30" src="https://cdn-avatars.huggingface.co/v1/production/uploads/63d10d4e8eaa4831005e92b5/a3R8vs2eGE578q4LEpaHB.png">
   <img alt="Ollama" height="30" width="30" src="https://ollama.com/public/ollama.png">
-  <img alt="docker" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
-  <img alt="PostgreSQL" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg">
-  <img alt="SQLAlchemy" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg" />
+  <img alt="ChromaDB" height="30" width="30" src="https://www.trychroma.com/img/favicon.ico">
 
 </p>
 
@@ -79,6 +129,7 @@ Para detalhes da implementação: [Documento da Arquitetura](architecture.md)
 </p>
 
 <p align="center">
+  <img alt="docker" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
   <img alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg">
   <img alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg">
   <img alt="Figma" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">

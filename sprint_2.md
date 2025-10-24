@@ -104,9 +104,9 @@ Nesta sprint, o foco foi automatizar a entrada de dados e enriquecer as informa�
 
   * Desenvolvimento de uma nova interface que permite ao usuário arrastar e soltar (`drag-and-drop`) ou selecionar arquivos PDF para envio.
 
-* **Visualização de Resultados em Tabela:**
+* **Visualização de Resultados:**
 
-  * Criação de uma tela que exibe os resultados da extração e classificação em um formato de tabela claro e organizado, apresentando o Part Number, a descrição, a NCM e a alíquota de cada item.
+  * Criação de uma tela que exibe os resultados da extração e classificação em um formato  claro e organizado, apresentando o Part Number, a descrição, a NCM e a alíquota de cada item.
 
 ### Demonstração
 
