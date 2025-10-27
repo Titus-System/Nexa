@@ -4,8 +4,8 @@
 >
 >**Início**: 06/10/2025  
 >**Fim**: 26/10/20245  
-> **Sprint Review**: 31/10/2025
-
+> **Sprint Review**: 31/10/2025  
+> **Status**: Encerrada
 ## Foco
 
 A segunda sprint do projeto NEXA foi concluída com foco na automação da entrada de dados e classificação fiscal. Em conformidade com as especificações alinhadas ao cliente, foi desenvolvida a funcionalidade de extração automática de Part Numbers (PNs) a partir de documentos PDF. Adicionalmente, implementou-se a lógica de classificação automática, que atribui a NCM (Nomenclatura Comum do Mercosul) e a respectiva alíquota de IPI (Imposto sobre Produtos Industrializados) para cada item extraído.
@@ -118,4 +118,4 @@ Nesta sprint, o foco foi automatizar a entrada de dados e enriquecer as informa�
 * **YouTube:**
 
   * Um vídeo demonstrando o novo fluxo de trabalho, desde o upload do PDF até a exibição dos itens classificados.
-  * [Demonstração da Entrega da Segunda Sprint](link-do-video-da-sprint-2)
+  * [Vídeo Demonstração da Entrega da Segunda Sprint](https://youtu.be/kPAlwLgL88o)
