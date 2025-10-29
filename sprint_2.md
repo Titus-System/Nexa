@@ -22,14 +22,6 @@ A segunda sprint do projeto NEXA foi concluída com foco na automação da entra
 
 -----
 
-Excelente ideia\! Transformar as listas de tarefas em uma **Definição de Pronto (Definition of Done - DoD)** é uma prática ágil fundamental para garantir que todos tenham o mesmo entendimento do que significa "completo".
-
-A DoD funciona como um checklist de qualidade. Em vez de apenas listar o que fazer, ela descreve o estado em que a funcionalidade deve estar para ser considerada entregue.
-
-Abaixo, transformei suas tarefas em critérios de pronto para cada User Story, apresentados em formato de tabela.
-
------
-
 ### **DoD Específica | US-1: Extração Automática de Part Numbers de PDF**
 
 | Módulo | Critério de Pronto |
@@ -57,9 +49,6 @@ Abaixo, transformei suas tarefas em critérios de pronto para cada User Story, a
 | **Backend** | - O endpoint que inicia a classificação retorna o `task_id` da tarefa assíncrona gerada pelo Celery. <br> - O endpoint `GET /api/status/{task_id}` retorna o estado atual da tarefa (ex: "Processando", "Concluído"). <br> - Quando a tarefa é concluída com sucesso, o endpoint de status também retorna o resultado final da classificação. |
 | **Frontend** | - A interface armazena o `task_id` recebido após iniciar a classificação. <br> - A interface consulta periodicamente (polling) o endpoint de status para buscar atualizações. <br> - O progresso da tarefa é exibido visualmente para o usuário. <br> - A tabela de resultados é preenchida e exibida na tela assim que a tarefa é concluída. |
 | **Integração** | - O ciclo completo de acompanhamento de status (iniciar tarefa -\> consultar progresso -\> exibir resultado final) foi testado e funciona como esperado. |
-
-## Tarefas
-
 
 
 ## Entregas Realizadas
