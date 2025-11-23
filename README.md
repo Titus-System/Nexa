@@ -4,7 +4,7 @@
 
 ![logo](docs/logo.png)
 
-> Status do Projeto: Em andamento ...
+> **Status do Projeto: Concluído (Entregue e  em evolução contínua)**
 
 ## Desafio
 
@@ -19,12 +19,12 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 | Sprint | User Story | Status | Prioridade |
 | :---  | :--- | :--- | :--- |
 | **1** | Como analista fiscal, quero enviar um Partnumber ao sistema para receber informações detalhadas do produto. | CONCLUÍDA | ▲ Alta |
-| **2** | Como analista fiscal, quero enviar um PDF com pedidos de compras para que o sistema extraia os Part Numbers automaticamente... | EM ANDAMENTO | ▲ Alta |
-| **2** | Como analista fiscal, quero que o sistema atribua automaticamente NCM e alíquota aos itens extraídos, para acelerar o processo de importação. | EM ANDAMENTO | ▲ Alta |
-| **2** | Como usuário, quero acessar o status da minha requisição de classificação | EM ANDAMENTO | **=** Média |
-| **3** | Como usuário, quero autenticar no sistema para acessar minhas operações com segurança. | A FAZER | ▲ Alta |
-| **3** | Como usuário autenticado, quero exportar minhas operações para Excel, para usá-las no registro oficial de importação. | A FAZER | **=** Média |
-| **3** | Como usuário autenticado, quero acessar o histórico de minhas operações para reaproveitar informações em importações futuras. | A FAZER | **=** Média |
+| **2** | Como analista fiscal, quero enviar um PDF com pedidos de compras para que o sistema extraia os Part Numbers automaticamente... | CONCLUÍDA | ▲ Alta |
+| **2** | Como analista fiscal, quero que o sistema atribua automaticamente NCM e alíquota aos itens extraídos, para acelerar o processo de importação. | CONCLUÍDA | ▲ Alta |
+| **2** | Como usuário, quero acessar o status da minha requisição de classificação | CONCLUÍDA | **=** Média |
+| **3** | Como usuário, quero autenticar no sistema para acessar minhas operações com segurança. | CONCLUÍDA | ▲ Alta |
+| **3** | Como usuário autenticado, quero exportar minhas operações para Excel, para usá-las no registro oficial de importação. | CONCLUÍDA | **=** Média |
+| **3** | Como usuário autenticado, quero acessar o histórico de minhas operações para reaproveitar informações em importações futuras. | CONCLUÍDA | **=** Média |
 
 ### 📅 Cronograma
 
@@ -33,7 +33,7 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 | Kick Off          | 25/08/2025 | Concluído    | -                      | -       |
 | Sprint 1          | 28/09/2025 | Concluído    | [sprint1](sprint_1.md) | [video](https://youtu.be/jFSbepQdjow)       |
 | Sprint 2          | 26/10/2025 | Concluído | [sprint2](sprint_2.md) | [video](https://youtu.be/kPAlwLgL88o)       |
-| Sprint 3          | 23/11/2025 | Em andamento     | [sprint3](sprint_3.md) | -       |
+| Sprint 3          | 23/11/2025 | Concluído     | [sprint3](sprint_3.md) | -       |
 | Feira de Soluções | 04/12/2025 | Não iniciado     | [feira](feira_sol.md)  | -       |
 
 ### Roadmap
@@ -101,7 +101,7 @@ O `Nexa-frontend` é a **interface do cliente** da aplicação. Desenvolvida com
 - **Atualizações em Tempo Real:** Estabelece uma conexão **WebSocket** com a API para receber e exibir o progresso das tarefas sem a necessidade de recarregar a página.
 - **Gerenciamento de Estado:** Controla o estado da interface, garantindo que os dados exibidos sejam consistentes e atualizados.
 
-**Tecnologias-chave:** `React`, `TypeScript`, `Vite`, `Socket.IO-client`, `CSS/Sass`.
+**Tecnologias-chave:** `React`, `TypeScript`, `Vite`, `Socket.IO-client`, `CSS/Sass`, `Tailwind`.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -190,10 +190,17 @@ source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 # Edite o .env conforme necessário
+
+docker compose up --build -d
+# Rodar o banco de dados vetorial
+
+python database/create.py
+# Inicia o banco de dados vetorial
+
 python run.py
 ```
 
-O agente estará disponível em [http://localhost:5001](http://localhost:5000).
+O serviço estará disponível em [http://localhost:5001](http://localhost:5000).
 
 ---
 
