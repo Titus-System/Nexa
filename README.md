@@ -33,7 +33,7 @@ O projeto foi feito seguindo o método Ágil SCRUM, dividindo o trabalho em spri
 | Kick Off          | 25/08/2025 | Concluído    | -                      | -       |
 | Sprint 1          | 28/09/2025 | Concluído    | [sprint1](sprint_1.md) | [video](https://youtu.be/jFSbepQdjow)       |
 | Sprint 2          | 26/10/2025 | Concluído | [sprint2](sprint_2.md) | [video](https://youtu.be/kPAlwLgL88o)       |
-| Sprint 3          | 23/11/2025 | Concluído     | [sprint3](sprint_3.md) | -       |
+| Sprint 3          | 23/11/2025 | Concluído     | [sprint3](sprint_3.md) | [video](https://youtu.be/PD5dtSAmnF4)       |
 | Feira de Soluções | 04/12/2025 | Não iniciado     | [feira](feira_sol.md)  | -       |
 
 ### Roadmap
